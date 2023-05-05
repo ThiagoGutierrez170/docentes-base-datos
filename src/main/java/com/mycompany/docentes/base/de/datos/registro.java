@@ -6,7 +6,6 @@ package com.mycompany.docentes.base.de.datos;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
-
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -72,6 +71,7 @@ public class registro {
     public void InsertarRegistro(JTextField paramid,JTextField paramcodigo,
             JTextField paramnombre,JTextField paramdocente,
             JTextField paramfecha_i,JTextField paramfecha_c){ 
+        
         setId(paramid.getText());
         setCodigo(paramcodigo.getText());
         setNombre(paramnombre.getText());
@@ -88,6 +88,7 @@ public class registro {
             cs.setString(4, getDocente());
             cs.setString(5, getFecha_i());
             cs.setString(6, getFecha_c());
+            cs.execute();
             JOptionPane.showMessageDialog(null,"se creo correctamente!");
         }
         catch(Exception e){
